@@ -2,6 +2,7 @@ FROM alpine:latest
 
 RUN apk upgrade && \
     apk add tor && \
+    apk add torsocks && \
     rm -rf /var/cache/apk/*
 
 RUN echo "Log notice stdout" >> /etc/torrc && \
