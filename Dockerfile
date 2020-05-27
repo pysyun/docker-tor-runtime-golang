@@ -3,7 +3,8 @@ RUN apk upgrade && \
     apk add tor && \
     apk add curl && \
     apk add git  && \
-    apk add iptables  && \
+    apk add iptables && \
+    apk add torsocks && \
     rm -rf /var/cache/apk/*
     
 # Add Package proxy for our HTTP programm
