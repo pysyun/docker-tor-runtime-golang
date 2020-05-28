@@ -14,3 +14,5 @@ services:
         # ${PWD} - path to our work dir
             - /home/vagrant/work/Dockerfile_for_TOR/main.go:${PWD}/main.go
         command: ["/bin/sh", "-c", "go run ${PWD}/main.go --INTERVAL $${INTERVAL} --TARGET $${TARGET}"]
+
+# docker-compose --compatibility up --detach
