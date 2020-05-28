@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
     tor:
-        image: epamtask/tor:alpine
+        image: pysyun/tor:alpine
         privileged: true
         deploy:
             mode: replicated
