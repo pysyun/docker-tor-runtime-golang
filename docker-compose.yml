@@ -6,8 +6,8 @@ services:
     privileged: true
     deploy:
       mode: replicated
-      replicas: 17
+      replicas: 3
     environment:
       - INTERVAL=1
       - TARGET=https://httpbin.org/get
-    command: ["/bin/sh", "-c", "curl $${TARGET}"]
+    command: ["/bin/sh", "-c", "torsocks curl $${TARGET}"]

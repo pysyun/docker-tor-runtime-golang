@@ -1,1 +1,1 @@
-sudo docker-compose --compatibility up
+docker-compose --compatibility up
