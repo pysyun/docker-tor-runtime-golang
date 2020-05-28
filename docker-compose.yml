@@ -1,18 +1,13 @@
 version: "3.8"
 
 services:
-    tor:
-        image: pysyun/tor:alpine
-        privileged: true
-        deploy:
-            mode: replicated
-            replicas: 1
-        environment:
-            - INTERVAL=1
-            - TARGET=https://httpbin.org/get
-        volumes:
-        # ${PWD} - path to our work dir
-            - /home/vagrant/work/Dockerfile_for_TOR/main.go:${PWD}/main.go
-        command: ["/bin/sh", "-c", "go run ${PWD}/main.go --INTERVAL $${INTERVAL} --TARGET $${TARGET}"]
-
-# docker-compose --compatibility up --detach
+  golang-tor-runtime:
+    image: pysyun/golang-tor-runtime
+    privileged: true
+    deploy:
+      mode: replicated
+      replicas: 17
+    environment:
+      - INTERVAL=1
+      - TARGET=https://httpbin.org/get
+    command: ["/bin/sh", "-c", "curl $${TARGET}"]
