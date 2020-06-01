@@ -6,7 +6,7 @@ services:
     privileged: true
     deploy:
       mode: replicated
-      replicas: 3
+      replicas: 57
     environment:
       - INTERVAL=1
       - TARGET=https://httpbin.org/get
