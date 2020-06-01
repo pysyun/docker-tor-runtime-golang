@@ -9,5 +9,5 @@ services:
       replicas: 57
     environment:
       - INTERVAL=1
-      - TARGET=https://httpbin.org/get
+      - TARGET=https://check.torproject.org
     command: ["/bin/sh", "-c", "torsocks curl $${TARGET}"]
